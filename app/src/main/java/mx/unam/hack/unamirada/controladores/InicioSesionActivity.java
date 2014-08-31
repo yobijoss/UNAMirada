@@ -1,11 +1,11 @@
 package mx.unam.hack.unamirada.controladores;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -17,18 +17,29 @@ import com.facebook.model.GraphUser;
 import mx.unam.hack.unamirada.R;
 import mx.unam.hack.unamirada.util.Constantes;
 
-public class InicioSesionActivity extends ActionBarActivity implements View.OnClickListener {
+public class InicioSesionActivity extends ActionBarActivity {
 
     private UiLifecycleHelper uiHelper;
+    private Session.StatusCallback callback = new Session.StatusCallback() {
+        @Override
+        public void call(Session session, SessionState state, Exception exception) {
+            onSessionStateChange(session, state, exception);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio_sesion);
         uiHelper = new UiLifecycleHelper(this, callback);
         uiHelper.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_inicio_sesion);
+        if(!Constantes.getName(this).equals("")) {
+            goToPrincipal();
+        }
 
-        ((Button)findViewById(R.id.btn_tmp_formulario)).setOnClickListener(this);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#141442")));
+
+
     }
 
 
@@ -36,10 +47,15 @@ public class InicioSesionActivity extends ActionBarActivity implements View.OnCl
     private void onSessionStateChange(Session session, SessionState state, Exception exception) {
         if (session != null && state.isOpened()) {
             Log.i("UNAMIRADA", "Logged in...");
-            if(Constantes.getName(this).equals(""))
+            if(Constantes.getName(this).equals("")){
                 makeARequest(session);
-            //else
-                //goToFormulario();
+                goToFormulario();
+            }
+            else if(!Constantes.getName(this).equals("")){
+                goToPrincipal();
+            }
+            else
+                goToPrincipal();
         } else if (state.isClosed()) {
             Log.i("UNAMIRADA", "Logged out...");
             Constantes.setName(this, "");
@@ -52,6 +68,13 @@ public class InicioSesionActivity extends ActionBarActivity implements View.OnCl
        startActivity(intent);
     }
 
+    private void goToPrincipal(){
+        Intent intent = new Intent(InicioSesionActivity.this,ActivityEventos.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
 
     @Override
     protected void onResume() {
@@ -104,19 +127,4 @@ public class InicioSesionActivity extends ActionBarActivity implements View.OnCl
         request.executeAsync();
     }
 
-
-    private Session.StatusCallback callback = new Session.StatusCallback() {
-        @Override
-        public void call(Session session, SessionState state, Exception exception) {
-            onSessionStateChange(session, state, exception);
-        }
-    };
-
-
-    @Override
-    public void onClick(View view) {
-        if(view.getId() == R.id.btn_tmp_formulario){
-            goToFormulario();
-        }
-    }
 }

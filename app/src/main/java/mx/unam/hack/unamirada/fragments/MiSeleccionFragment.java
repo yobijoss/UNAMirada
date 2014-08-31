@@ -48,9 +48,9 @@ public class MiSeleccionFragment extends Fragment implements AbsListView.OnItemC
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Constantes.init();
         mAdapter = new MiSeleccionAdapter(this.getActivity(),R.layout.layout_adapter_seleccion, Constantes.eve_ret);
-        if(!Constantes.eve_ret.isEmpty()){
+        if(Constantes.eve_ret.isEmpty()){
             getEventos();
         }
     }
@@ -110,7 +110,6 @@ public class MiSeleccionFragment extends Fragment implements AbsListView.OnItemC
 
     public void getEventos() {
 
-        Log.d("uNAMirada","Entrango Get EVntos");
         final ArrayList<Integer> op1 = Constantes.getOpciones(getActivity(),0);
         final ArrayList<Integer> op2 = Constantes.getOpciones(getActivity(),1);
         final ArrayList<Integer> op3 = Constantes.getOpciones(getActivity(),2);
@@ -143,7 +142,6 @@ public class MiSeleccionFragment extends Fragment implements AbsListView.OnItemC
                                          (ev.getCategoria() == 2 && op3.contains(ev.getSubCategoria()))) {
                                      Constantes.eve_ret.add(ev);
                                      mAdapter.notifyDataSetChanged();
-                                     Log.d("UNAMirada","Se agrego Algo");
                                  }
                              }
                          }

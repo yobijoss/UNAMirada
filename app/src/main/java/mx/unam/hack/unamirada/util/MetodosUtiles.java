@@ -1,5 +1,11 @@
 package mx.unam.hack.unamirada.util;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import com.parse.ParseException;
+import com.parse.ParseFile;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -25,5 +31,18 @@ public class MetodosUtiles {
                 iter.remove();
             }
         }
+    }
+
+    public static Bitmap resuelve(ParseFile imagen) {
+
+        byte[] data = new byte[1024];
+        try {
+            data = imagen.getData();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
+
+        return bmp;
     }
 }

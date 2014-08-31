@@ -1,6 +1,7 @@
 package mx.unam.hack.unamirada.objetos;
 
 import com.parse.ParseClassName;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
@@ -41,4 +42,11 @@ public class Eventos extends ParseObject{
     public void setSubCategoria(int sub_categoria){put("sub_categoria",sub_categoria);}
     public int getSubCategoria(){return getInt("sub_categoria");}
 
+    public void setImagen(ParseFile imagen){put("imagen",imagen);}
+    public ParseFile getImagen(){return getParseFile("imagen");}
+
+    @Override
+    public String toString() {
+        return this.getNombre();
+    }
 }

@@ -2,8 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ebebeb"
-    tools:context="mx.unam.hack.unamirada.controladores.EventoDetalladoActivity">
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="mx.unam.hack.unamirada.controladores.RecordarEventoActivity">
 
 
     <ImageView
@@ -11,7 +14,7 @@
         android:layout_height="150dp"
         android:src="@drawable/dummy_back"
         android:scaleType="fitXY"
-        android:id="@+id/img_det"
+        android:id="@+id/img_fin"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -19,12 +22,11 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_det"
-        android:layout_alignLeft="@+id/img_det"
-        android:layout_alignStart="@+id/img_det"
+        android:layout_below="@+id/img_fin"
+        android:layout_alignLeft="@+id/img_fin"
+        android:layout_alignStart="@+id/img_fin"
         android:weightSum="1"
-        android:id="@+id/texto"
-        android:layout_above="@+id/btn_guardar">
+        android:id="@+id/texto">
 
         <TextView
             android:layout_width="match_parent"
@@ -33,9 +35,9 @@
             android:text="Nombre"
             android:maxLines="2"
             android:lines="1"
-            android:minLines="1"
+            android:minLines="2"
             android:gravity="center"
-            android:id="@+id/lbl_det_nombre"
+            android:id="@+id/lbl_fin_nombre"
             android:layout_weight="0.05"
             android:textColor="#999999"
             android:textSize="18sp" />
@@ -45,26 +47,30 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Aquí va la fecha"
-            android:id="@+id/lbl_det_fecha"
+            android:id="@+id/lbl_fin_fecha"
             android:lines="1"
             android:gravity="center"
             android:layout_weight="0.05"
             android:layout_gravity="center_horizontal"
             android:textColor="#999999"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:maxLines="2"
+            android:minLines="2" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/lbl_det_hotaInicio"
+            android:id="@+id/lbl_fin_hotaInicio"
             android:lines="1"
             android:gravity="center"
             android:layout_weight="0.05"
             android:layout_gravity="center_horizontal"
             android:textColor="#999999"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:maxLines="2"
+            android:minLines="2" />
 
         <TextView
             android:layout_width="match_parent"
@@ -72,14 +78,16 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:layout_marginLeft="10dp"
-            android:id="@+id/lbl_det_horaFinal"
+            android:id="@+id/lbl_fin_horaFinal"
             android:lines="1"
             android:gravity="left"
             android:layout_weight="0.05"
             android:layout_gravity="center_horizontal"
             android:textColor="#999999"
             android:textSize="15sp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:maxLines="2"
+            android:minLines="2" />
 
         <TextView
             android:layout_width="match_parent"
@@ -87,39 +95,44 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:layout_marginLeft="10dp"
-            android:id="@+id/lbl_det_lugar"
+            android:id="@+id/lbl_fin_lugar"
             android:lines="1"
             android:gravity="left"
             android:layout_weight="0.05"
             android:layout_gravity="center_horizontal"
             android:textColor="#999999"
             android:textSize="15sp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:maxLines="2"
+            android:minLines="2" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:layout_marginLeft="10dp"
-            android:id="@+id/lbl_det_descripcion"
-            android:maxLines="10"
+            android:id="@+id/lbl_fin_descripcion"
+            android:maxLines="2"
             android:gravity="left"
             android:layout_weight="0.05"
             android:layout_gravity="center_horizontal"
             android:textColor="#999999"
             android:textSize="15sp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:minLines="2" />
 
     </LinearLayout>
 
-
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar Evento"
-        android:id="@+id/btn_guardar"
+        android:text="Agregar Recordatorios"
+        android:id="@+id/btn_agregar"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/texto"
-        android:layout_alignStart="@+id/texto" />
+        android:layout_alignRight="@+id/texto"
+        android:layout_alignEnd="@+id/texto"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

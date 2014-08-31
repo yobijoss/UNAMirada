@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New CheckBox"
+        android:textColor="#141442"
         android:id="@+id/checkBox_selector"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

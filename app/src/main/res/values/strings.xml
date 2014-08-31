@@ -41,6 +41,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_opciones">Opciones</string>
-    <string name="title_activity_evento_detallado">EventoDetalladoActivity</string>
+    <string name="title_activity_evento_detallado">Tu evento</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_activity_eventos_lista">ActivityEventosLista</string>
+    <string name="title_activity_recordar_evento">¿Quiéres Agendarlo?</string>
 
 </resources>

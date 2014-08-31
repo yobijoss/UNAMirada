@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:name=".controladores.UNAMirada"
@@ -41,7 +43,27 @@
         </activity>
         <activity
             android:name=".controladores.EventoDetalladoActivity"
-            android:label="@string/title_activity_evento_detallado" >
+            android:label="@string/title_activity_evento_detallado"
+            android:parentActivityName=".controladores.ActivityEventos" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".controladores.ActivityEventos" />
+        </activity>
+        <activity
+            android:name=".controladores.ActivityEventosLista"
+            android:label="@string/title_activity_activity_eventos_lista"
+            android:parentActivityName=".controladores.ActivityEventos" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mx.unam.hack.unamirada.controladores.ActivityEventos" />
+        </activity>
+        <activity
+            android:name=".controladores.RecordarEventoActivity"
+            android:label="@string/title_activity_recordar_evento"
+            android:parentActivityName=".controladores.ActivityEventosLista" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mx.unam.hack.unamirada.controladores.ActivityEventosLista" />
         </activity>
     </application>
 
