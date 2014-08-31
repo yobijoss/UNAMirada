@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UNAMirada.iml" filepath="$PROJECT_DIR$/UNAMirada.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facebookSDK/facebookSDK.iml" filepath="$PROJECT_DIR$/facebookSDK/facebookSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraryPager/libraryPager.iml" filepath="$PROJECT_DIR$/libraryPager/libraryPager.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_titulo"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/dummy_back"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_titulo"
+        android:layout_alignLeft="@+id/img_titulo"
+        android:layout_alignStart="@+id/img_titulo"
+        android:layout_alignRight="@+id/img_titulo"
+        android:layout_alignEnd="@+id/img_titulo"
+        android:padding="5dp"
+        android:background="#ebebeb">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Nombre Evento"
+            android:textColor="#999999"
+            android:maxLines="2"
+            android:lines="2"
+            android:minLines="2"
+            android:layout_marginTop="10dp"
+            android:id="@+id/lbl_thumb_nombre"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Lugar"
+            android:maxLines="2"
+            android:lines="2"
+            android:minLines="2"
+            android:textColor="#999999"
+            android:layout_marginTop="10dp"
+            android:id="@+id/lbl_thumb_lugar"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginTop="10dp"
+            android:text="fecha"
+            android:textColor="#999999"
+            android:maxLines="2"
+            android:lines="2"
+            android:minLines="2"
+            android:id="@+id/lbl_thumb_fecha"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginTop="10dp"
+            android:text="Hora de Inicio"
+            android:textColor="#999999"
+            android:maxLines="2"
+            android:lines="2"
+            android:minLines="2"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/lbl_thumb_inicio"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
