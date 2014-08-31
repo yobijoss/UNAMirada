@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UNAMirada</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_inicio_sesion">Inicia Sesión</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_id">1458194374459797</string>
+    <string name="title_activity_formulario">¿Qué te gusta?</string>
+    <string name="titulo_bienvenida">Bienvenido, ahora descubre todo lo de la UNAM tiene para ti </string>
+
+    <string-array name="opc_deporte">
+        <item>Futbol</item>
+        <item>Basquetbol</item>
+        <item>Volleybol</item>
+        <item>Natación</item>
+        <item>Atletismo</item>
+    </string-array>
+    <string-array name="opc_arte">
+        <item>Cine</item>
+        <item>Teatro</item>
+        <item>Fotografía</item>
+        <item>Pintura</item>
+        <item>Música</item>
+        <item>Danza</item>
+    </string-array>
+    <string-array name="opc_ciencia_tecnología">
+        <item>Innovación</item>
+        <item>Avance Científico</item>
+        <item>Avance Tecnológico</item>
+        <item>otras</item>
+        <item>medicina</item>
+    </string-array>
+
+    <string name="title_activity_activity_eventos">Eventos</string>
+    <string name="title_section1">Mi Seleccion</string>
+    <string name="title_section2">Listas de Eventos</string>
+    <string name="title_section3">Acerca De</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_opciones">Opciones</string>
+
+</resources>
