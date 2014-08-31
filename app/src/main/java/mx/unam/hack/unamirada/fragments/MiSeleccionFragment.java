@@ -50,7 +50,7 @@ public class MiSeleccionFragment extends Fragment implements AbsListView.OnItemC
         super.onCreate(savedInstanceState);
 
         mAdapter = new MiSeleccionAdapter(this.getActivity(),R.layout.layout_adapter_seleccion, Constantes.eve_ret);
-        if(Constantes.eve_ret.size()==0){
+        if(!Constantes.eve_ret.isEmpty()){
             getEventos();
         }
     }
@@ -67,12 +67,6 @@ public class MiSeleccionFragment extends Fragment implements AbsListView.OnItemC
         // Set OnItemClickListener so we can be notified on item clicks
         mGridView.setOnItemClickListener(this);
 
-        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-        });
 
         return view;
     }
@@ -111,8 +105,7 @@ public class MiSeleccionFragment extends Fragment implements AbsListView.OnItemC
     }
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(int id);
+        public void onFragmentInteraction(int pos);
     }
 
     public void getEventos() {

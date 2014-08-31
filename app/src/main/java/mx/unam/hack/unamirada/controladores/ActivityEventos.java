@@ -99,4 +99,10 @@ public class ActivityEventos extends ActionBarActivity
     }
 
 
+    @Override
+    public void onFragmentInteraction(int pos) {
+        //vamos a actividad evento. con la pos del evento.
+
+
+    }
 }
